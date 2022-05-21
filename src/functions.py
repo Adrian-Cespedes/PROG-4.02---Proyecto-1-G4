@@ -21,10 +21,24 @@ def escogerASCII():
         if not txt.startswith("#"):
             listaArt.remove(txt)
     n = 0
+    print()
+    print("=" * 50)
     for txt in listaArt:
         print(f"\n[{n}] [{txt[1:]}]")
         n += 1
+    print()
+    print("=" * 50)
     opcion = int(input("\nEscoge un ASCII Art:"))
+    while not opcion < len(listaArt):
+        n = 0
+        print()
+        print("=" * 50)
+        for txt in listaArt:
+            print(f"\n[{n}] [{txt[1:]}]")
+            n += 1
+        print()
+        print("=" * 50)
+        opcion = int(input("\nEscoge un ASCII Art:"))
     path = "Assets/" + listaArt[opcion]
     print()
     imprimirASCII(loadText(path))
