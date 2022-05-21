@@ -41,11 +41,11 @@ def escogerASCII():
         opcion = int(input("\nEscoge un ASCII Art:"))
     path = "Assets/" + listaArt[opcion]
     print()
-    imprimirASCII(loadText(path))
+    return loadText(path)
 
 def mostrarASCII():
     ascii = escogerASCII()
-    pass
+    imprimirASCII(ascii)
 
 def rotar90():
     ascii = escogerASCII()
