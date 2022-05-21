@@ -40,7 +40,9 @@ def menu():
         print("[1] SI")
         print("[0] NO")
         opcion = int(input("Desea volver a usar?: "))
-        if opcion != 0:
+        if opcion == 0:
+            print("\nGracias por usar este programa.")
+            quit()
+        else:
             menu()
-            opcion = int(input("\nIngrese su opcion: "))
-    print("\nGracias por usar este programa.")
+            #opcion = int(input("\nIngrese su opcion: "))
