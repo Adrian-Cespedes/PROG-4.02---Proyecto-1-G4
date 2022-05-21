@@ -4,10 +4,10 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "run",
+            "label": "Run only",
             "type": "shell",
             "command": "python src/__main__.py",
             "problemMatcher":[],
-        }
+        },
     ]
 }
