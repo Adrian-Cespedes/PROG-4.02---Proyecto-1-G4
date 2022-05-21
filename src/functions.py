@@ -23,10 +23,10 @@ def escogerASCII():
     n = 0
     for txt in listaArt:
         print(f"\n[{n}] [{txt[2:]}]")
-        opcion = int(input("\nEscoge un ASCII Art:"))
         n += 1
-    print(listaArt)
+    opcion = int(input("\nEscoge un ASCII Art:"))
     path = "Assets/" + listaArt[opcion]
+    print()
     imprimirASCII(loadText(path))
 
 def mostrarASCII():

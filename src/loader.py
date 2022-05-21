@@ -1,5 +1,5 @@
 def loadText(path):
-    file = open(path,"r")
+    file = open(path, "r", encoding='utf8')
     matrix = []
     XSIZE = 0
 
