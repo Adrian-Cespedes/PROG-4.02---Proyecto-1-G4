@@ -57,8 +57,10 @@ def rotar90Anti():
 
 def rotar180():
     ascii = escogerASCII()
-    print("Ga")
-    pass
+    for f in range(len(ascii)-1,-1,-1):
+        for c in range(len(ascii[f])):
+            print(ascii[f][c],end="")
+        print()
 
 def rotar180Anti():
     ascii = escogerASCII()
