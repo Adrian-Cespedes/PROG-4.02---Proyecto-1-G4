@@ -64,7 +64,10 @@ def rotar180():
 
 def rotar180Anti():
     ascii = escogerASCII()
-    pass
+    for f in range(len(ascii)-1,-1,-1):
+        for c in range(len(ascii[f])-1,-1,-1):
+            print(ascii[f][c],end="")
+        print()
 
 def frecCaracteres():
     ascii = escogerASCII()
