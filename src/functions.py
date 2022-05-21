@@ -22,7 +22,7 @@ def escogerASCII():
             listaArt.remove(txt)
     n = 0
     for txt in listaArt:
-        print(f"\n[{n}] [{txt[2:]}]")
+        print(f"\n[{n}] [{txt[1:]}]")
         n += 1
     opcion = int(input("\nEscoge un ASCII Art:"))
     path = "Assets/" + listaArt[opcion]
