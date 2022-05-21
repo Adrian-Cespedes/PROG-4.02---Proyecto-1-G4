@@ -57,6 +57,7 @@ def rotar90Anti():
 
 def rotar180():
     ascii = escogerASCII()
+    print("Ga")
     pass
 
 def rotar180Anti():
