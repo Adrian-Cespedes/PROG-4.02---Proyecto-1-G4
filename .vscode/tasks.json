@@ -6,7 +6,8 @@
         {
             "label": "run",
             "type": "shell",
-            "command": "python src/__main__.py"
+            "command": "python src/__main__.py",
+            "problemMatcher":[],
         }
     ]
 }
