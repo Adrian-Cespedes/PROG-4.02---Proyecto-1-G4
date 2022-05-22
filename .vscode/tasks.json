@@ -6,7 +6,7 @@
         {
             "label": "Run",
             "type": "shell",
-            "command": "python src/__main__.py",
+            "command": "./exec.bat",
             "problemMatcher":[]
         }
     ]
