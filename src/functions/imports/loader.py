@@ -21,7 +21,4 @@ def loadText(path):
         for _ in range(diff):
             matrix[m].append(" ")
 
-    for e in matrix:
-        print(e)
-
     return matrix
