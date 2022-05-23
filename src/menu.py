@@ -1,4 +1,4 @@
-from functions import *
+from funcHandler import *
 
 def menuTexto():
     print("="*100)
@@ -12,12 +12,14 @@ def menuTexto():
     print("="*100)
 
 def menu():
-    titulo()
-    menuTexto()
 
-    opcion = int(input("\nIngrese su opcion: "))
+    flag = True
+    while flag:
+        titulo()
+        menuTexto()
 
-    while opcion >= 1:
+        opcion = int(input("\nIngrese su opcion: "))
+
         if opcion == 0:
             break
         elif opcion == 1:
@@ -29,20 +31,24 @@ def menu():
         elif opcion == 4:
             rotar180()
         elif opcion == 5:
-            rotar180Anti()
+             rotar180Anti()
         elif opcion == 6:
             frecCaracteres()
         else:
             print("Escoge una de las opciones...")
-            menu()
 
         print()
         print("[1] SI")
         print("[0] NO")
-        opcion = int(input("Desea volver a usar?: "))
-        if opcion == 0:
-            print("\nGracias por usar este programa.")
-            quit()
-        else:
-            menu()
-            #opcion = int(input("\nIngrese su opcion: "))
+
+        while True:
+            opcion = int(input("Desea volver a usar?: "))
+            if opcion ==  0:
+                flag = False
+                break
+            elif opcion == 1:
+                break
+            else:
+                print("Seleccione una selección valida")
+    
+    print("\nGracias por usar este programa.")
