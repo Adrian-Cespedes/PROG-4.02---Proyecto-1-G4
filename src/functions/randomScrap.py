@@ -1,6 +1,7 @@
 from random import randint
 from bs4 import BeautifulSoup
 import requests
+import re
 
 def randomScrap():
     url = "http://www.asciiworld.com/index.html"
@@ -31,4 +32,5 @@ def randomScrap():
         ascii = result.find(text=True)
         listaFinal.append(ascii)
     n = randint(0, len(lista)-1)
-    return listaFinal[n]
+    ascii = listaFinal[n]
+    return(ascii)

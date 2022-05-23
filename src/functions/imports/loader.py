@@ -1,7 +1,8 @@
-def loadText(path):
-    file = open(path, "r", encoding='utf8')
+def loadText(file):
     matrix = []
     XSIZE = 0
+    CRLF = '\r\n'
+    CR = '\r'
 
     for rawRow in file:
         newRow = []
@@ -22,5 +23,5 @@ def loadText(path):
         for _ in range(diff):
             matrix[m].append(" ")
 
-    file.close()
+    #file.close
     return matrix
