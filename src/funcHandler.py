@@ -1,34 +1,34 @@
-from functions.escogerASCII import escogerASCII
-from functions.imprimirASCII import imprimirASCII
+from functions.selectASCII import selectASCII
+from functions.printASCII import printASCII
 
-def mostrarASCII():
-    ascii = escogerASCII()
-    imprimirASCII(ascii)
+def showASCII():
+    ascii = selectASCII()
+    printASCII(ascii)
 
-def rotar90():
-    ascii = escogerASCII()
+def rotate90():
+    ascii = selectASCII()
     pass
 
-def rotar90Anti():
-    ascii = escogerASCII()
+def rotate90Anti():
+    ascii = selectASCII()
     pass
 
-def rotar180():
-    ascii = escogerASCII()
+def rotate180():
+    ascii = selectASCII()
     for f in range(len(ascii)-1,-1,-1):
         for c in range(len(ascii[f])):
             print(ascii[f][c],end="")
         print()
 
-def rotar180Anti():
-    ascii = escogerASCII()
+def rotate180Anti():
+    ascii = selectASCII()
     for f in range(len(ascii)-1,-1,-1):
         for c in range(len(ascii[f])-1,-1,-1):
             print(ascii[f][c],end="")
         print()
 
-def frecCaracteres():
-    ascii = escogerASCII()
+def frecChars():
+    ascii = selectASCII()
     
     charsInd =[]
     counterInd = []

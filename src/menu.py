@@ -23,17 +23,17 @@ def menu():
         if opcion == 0:
             break
         elif opcion == 1:
-            mostrarASCII()
+            showASCII()
         elif opcion == 2:
-            rotar90()
+            rotate90()
         elif opcion == 3:
-            rotar90Anti()
+            rotate90Anti()
         elif opcion == 4:
-            rotar180()
+            rotate180()
         elif opcion == 5:
-             rotar180Anti()
+            rotate180Anti()
         elif opcion == 6:
-            frecCaracteres()
+            frecChars()
         else:
             print("Escoge una de las opciones...")
 
