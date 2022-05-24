@@ -1,5 +1,6 @@
 from funcHandler import *
 
+#Decoración principal
 def menuTexto():
     print("="*100)
     print("[1] Mostrar un ASCII ART")
@@ -13,13 +14,17 @@ def menuTexto():
 
 def menu():
 
+# Flag nos sirve como un booleano
     flag = True
     while flag:
+        # Crea una pequeña presentación
         titulo()
+        # Esto crea lo que las instrucciones para el usuario
         menuTexto()
 
         opcion = int(input("\nIngrese su opcion: "))
 
+        #Aca solo se crean condiciones según lo que ingrese el usuario
         if opcion == 0:
             break
         elif opcion == 1:
@@ -41,10 +46,13 @@ def menu():
         print("[1] SI")
         print("[0] NO")
 
+        # ¿Mientras sea verdad que cosa?¿Flag?
         while True:
+            # Le pregunta al ususariosi desea volver a usa
             opcion = int(input("Desea volver a usar?: "))
             if opcion ==  0:
                 flag = False
+                # ¿Y por eso lo anterior no?¿Pero esto no debería de ir más arriba?
                 break
             elif opcion == 1:
                 break
