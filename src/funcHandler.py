@@ -7,11 +7,17 @@ def showASCII():
 
 def rotate90():
     ascii = selectASCII()
-    pass
+    for col in range(0, len(ascii[0])-1, 1):
+        for fil in range(len(ascii)-1, -1, -1):
+            print(ascii[fil][col], end='')
+        print('')
 
 def rotate90Anti():
     ascii = selectASCII()
-    pass
+    for col in range(len(ascii[0])-1, -1, -1):
+        for fil in range(0, len(ascii)-1, 1):
+            print(ascii[fil][col], end='')
+        print('')
 
 def rotate180():
     ascii = selectASCII()
@@ -28,8 +34,10 @@ def rotate180Anti():
         print()
 
 def frecChars():
+    # Selec ascii, tal como lo dice el nombre, solo selecciona el ascii para ser almacenado en la variable ascci
     ascii = selectASCII()
     
+    # Se crea listas
     charsInd =[]
     counterInd = []
 
@@ -47,8 +55,10 @@ def frecChars():
     for i in range(len(charsInd)):
         print("%-10s : %-s" % (charsInd[i],counterInd[i]))
 
+# 'def titulo' como que nos abre paso a los asciis
 def titulo():
     f = open("Assets/tittle.txt", 'r', encoding="utf8")
     print()
+# ¿?
     print(''.join([line for line in f]))
     print("{:^100s}".format("Grupo 4"))
