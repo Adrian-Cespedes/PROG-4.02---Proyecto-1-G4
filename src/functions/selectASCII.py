@@ -1,6 +1,5 @@
 from os import listdir
 from functions.imports.loader import loadText
-from functions.imports.txtOpener import txtOpener
 from functions.randomScrap import randomScrap
 
 def selectASCII():
@@ -32,6 +31,6 @@ def selectASCII():
     if option < len(artList):
         path = "Assets/" + artList[option]
         print()
-        return loadText(txtOpener(path))
+        return loadText(path)
     else:
         return randomScrap()
