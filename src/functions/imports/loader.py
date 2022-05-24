@@ -1,8 +1,6 @@
 def loadText(file):
     matrix = []
     XSIZE = 0
-    CRLF = '\r\n'
-    CR = '\r'
 
     for rawRow in file:
         newRow = []

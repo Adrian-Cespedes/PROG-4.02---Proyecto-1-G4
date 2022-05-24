@@ -34,4 +34,4 @@ def selectASCII():
         print()
         return loadText(txtOpener(path))
     else:
-        return loadText(randomScrap())
+        return randomScrap()

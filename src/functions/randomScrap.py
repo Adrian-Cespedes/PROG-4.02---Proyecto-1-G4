@@ -1,7 +1,6 @@
 from random import randint
 from bs4 import BeautifulSoup
 import requests
-import re
 
 def randomScrap():
     url = "http://www.asciiworld.com/index.html"
@@ -29,8 +28,31 @@ def randomScrap():
     lista = soup.find_all("pre", text=True)
     listaFinal = []
     for result in lista:
-        ascii = result.find(text=True)
+        ascii = result.get_text()
         listaFinal.append(ascii)
     n = randint(0, len(lista)-1)
     ascii = listaFinal[n]
-    return(ascii)
+    lines = ascii.split("\n")
+
+    # <pre> html ASCII to python matrix
+    matrix = []
+    for line in lines:
+        matrixRow = []
+        for char in line:
+            matrixRow.append(char)
+        matrix.append(matrixRow)
+
+    # Getting the max row length number to make the matrix like a rectangle
+    lengthList = []
+    for row in matrix:
+        lengthList.append(len(row))
+    index = lengthList.index(max(lengthList))
+    maxRowLength = len(matrix[index])
+
+    # Filling the matrix rows
+    for m in range(len(matrix)):
+        diff = maxRowLength - len(matrix[m])
+        for _ in range(diff):
+            matrix[m].append(" ")
+
+    return matrix
