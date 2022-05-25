@@ -19,15 +19,15 @@ def rotate90Anti():
             print(ascii[fil][col], end='')
         print('')
 
-def rotate180():
-    ascii = selectASCII()
+def rotate180():                               #La funcion definida como rotate180 tiene como objetivo imprimir las filas desde la ultima hasta la primera, considerando las columnas iguales
+    ascii = selectASCII()                      #A las que estaban en la imagen ASCII original
     for f in range(len(ascii)-1,-1,-1):
         for c in range(len(ascii[f])):
             print(ascii[f][c],end="")
         print()
 
-def rotate180Anti():
-    ascii = selectASCII()
+def rotate180Anti():                               #La funcion definida como rotate180Anti tiene como objetivo imprimir las filas desde la ultima hasta la primera y desde la ultima columna
+    ascii = selectASCII()                          #Hasta la primera
     for f in range(len(ascii)-1,-1,-1):
         for c in range(len(ascii[f])-1,-1,-1):
             print(ascii[f][c],end="")
