@@ -37,28 +37,31 @@ def frecChars():
     # Selec ascii, tal como lo dice el nombre, solo selecciona el ascii para ser almacenado en la variable ascci
     ascii = selectASCII()
     
-    # Se crea listas
-    charsInd =[]
-    counterInd = []
+    # Se crea diccionario
+    charsDic  = {}
+
+    #Iteración sobre filas de matriz
+    for row in ascii:
+        #Interación sobre columnas de filas
+        for x in row:
+            #Si se encuentra marcado en el diccionario, sumar 1
+            if x in charsDic:
+                charsDic[x] += 1
+            #De lo contrario inicializar con 1
+            else:
+                charsDic[x] = 1
 
     print("%-10s | %10s" % ("Caracter","Frecuencia"))
     print("¯" * 23)
-    for row in ascii:
-        for x in row:
-            if not (x in charsInd):
-                charsInd.append(x)
-                counterInd.append(0)
-                counterInd[charsInd.index(x)] += 1
-            else:
-                counterInd[charsInd.index(x)] += 1
     
-    for i in range(len(charsInd)):
-        print("%-10s : %-s" % (charsInd[i],counterInd[i]))
+    for key,value in charsDic.items():
+        print("%-10s : %-s" % (key,value))
 
 # 'def titulo' como que nos abre paso a los asciis
 def titulo():
+    #Carga el logo del titulo desde el archivo tittle.txt
     f = open("Assets/tittle.txt", 'r', encoding="utf8")
     print()
-# ¿?
+    #Imprime el Titulo
     print(''.join([line for line in f]))
     print("{:^100s}".format("Grupo 4"))
