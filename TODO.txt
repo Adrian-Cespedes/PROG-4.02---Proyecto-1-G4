@@ -2,4 +2,6 @@
 
 2)ESTRUCTURAR FUNCIONES (X)
 
-3)COMENTAR CODIGO       (_)
+3)COMENTAR CODIGO       (X/)
+
+4) REHACER MENU         (_)
