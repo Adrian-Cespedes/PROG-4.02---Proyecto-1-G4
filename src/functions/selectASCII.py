@@ -31,16 +31,6 @@ def selectASCII():
             option = int(input("\nEscoge un ASCII Art:"))
         except ValueError:
             continue
-        # while not option < len(artList):
-        #     n = 0
-        #     print()
-        #     print("=" * 50)
-        #     for txt in artList:
-        #         print(f"\n[{n}] [{txt[1:]}]")
-        #         n += 1
-        #     print()
-        #     print("=" * 50)
-        #     option = int(input("\nEscoge un ASCII Art:"))
         try:    
             path = "Assets/" + artList[option]
         except IndexError:
