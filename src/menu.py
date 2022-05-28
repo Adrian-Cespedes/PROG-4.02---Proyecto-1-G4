@@ -1,4 +1,9 @@
+import os
 from funcHandler import *
+
+# Funcion para limpiar la consola
+def clear():
+    os.system("cls")
 
 #Decoración principal
 def menuTexto():
@@ -17,44 +22,66 @@ def menu():
 # Flag nos sirve como un booleano
     flag = True
     while flag:
-        # Crea una pequeña presentación
-        titulo()
-        # Esto crea lo que las instrucciones para el usuario
-        menuTexto()
+        # While anidado para controlar opciones no validas y reiniciar las opciones
+        while True:
+            # Crea una pequeña presentación
+            titulo()
+            # Esto crea lo que las instrucciones para el usuario
+            menuTexto()
 
-        opcion = int(input("\nIngrese su opcion: "))
+            # Handling Exception si opcion no es int
+            try:
+                opcion = int(input("\nIngrese su opcion: "))
+            except ValueError:
+                clear()
+                continue
 
-        #Aca solo se crean condiciones según lo que ingrese el usuario
-        if opcion == 0:
-            break
-        elif opcion == 1:
-            showASCII()
-        elif opcion == 2:
-            rotate90()
-        elif opcion == 3:
-            rotate90Anti()
-        elif opcion == 4:
-            rotate180()
-        elif opcion == 5:
-            rotate180Anti()
-        elif opcion == 6:
-            frecChars()
-        else:
-            print("Escoge una de las opciones...")
+            # Opciones disponibles
+            if opcion == 0:
+                flag = False
+            elif opcion == 1:
+                clear()
+                showASCII()
+                break
+            elif opcion == 2:
+                clear()
+                rotate90()
+                break
+            elif opcion == 3:
+                clear()
+                rotate90Anti()
+                break
+            elif opcion == 4:
+                clear()
+                rotate180()
+                break
+            elif opcion == 5:
+                clear()
+                rotate180Anti()
+                break
+            elif opcion == 6:
+                clear()
+                frecChars()
+                break
+            else:
+                print("Escoge una de las opciones...")
+                clear()
+                continue
 
         print()
         print("[1] SI")
         print("[0] NO")
 
-        # ¿Mientras sea verdad que cosa?¿Flag?
+        # While anidado para poder "reiniciar" y volver al while principal si se desea volver a usar
         while True:
             # Le pregunta al ususariosi desea volver a usa
             opcion = int(input("Desea volver a usar?: "))
             if opcion ==  0:
                 flag = False
-                # ¿Y por eso lo anterior no?¿Pero esto no debería de ir más arriba?
+                # Romper todo el while, cerrando el programa
                 break
             elif opcion == 1:
+                clear()
                 break
             else:
                 print("Seleccione una selección valida")
