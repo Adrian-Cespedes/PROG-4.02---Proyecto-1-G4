@@ -21,6 +21,7 @@ def menu():
 
 # Flag nos sirve como un booleano
     flag = True
+    trigger = True
     while flag:
         # While anidado para controlar opciones no validas y reiniciar las opciones
         while True:
@@ -39,6 +40,8 @@ def menu():
             # Opciones disponibles
             if opcion == 0:
                 flag = False
+                trigger = False
+                break
             elif opcion == 1:
                 clear()
                 showASCII()
@@ -73,12 +76,12 @@ def menu():
         print("[0] NO")
 
         # While anidado para poder "reiniciar" y volver al while principal si se desea volver a usar
-        while True:
+        while trigger:
             # Le pregunta al ususariosi desea volver a usa
             opcion = int(input("Desea volver a usar?: "))
             if opcion ==  0:
-                flag = False
                 # Romper todo el while, cerrando el programa
+                flag = False
                 break
             elif opcion == 1:
                 clear()
