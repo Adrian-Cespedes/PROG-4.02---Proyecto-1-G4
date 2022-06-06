@@ -1,3 +1,7 @@
+#
+#
+#
+
 def printASCII(mat):
     row = len(mat)
     col   = len(mat[0])

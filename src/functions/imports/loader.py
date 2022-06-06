@@ -1,3 +1,7 @@
+#
+#
+#
+
 def loadText(path):
     file = open(path, "r", encoding='utf8')
     content = file.read()
