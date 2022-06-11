@@ -7,3 +7,4 @@ Integrantes:
    - Lenin Chavez
    - Marcelo Chincha
    - Adrian Cespedes
+   - Gabriel Blanco
