@@ -32,7 +32,7 @@ def selectASCII():
         print("=" * 50)
         # Se muestra la segunda parte del codigo, la elección del ascii
         try:
-            option = int(input("\nEscoge un ASCII Art:"))
+            option = int(input("\nEscoge un ASCII Art: "))
         except ValueError:
             continue
         try:    

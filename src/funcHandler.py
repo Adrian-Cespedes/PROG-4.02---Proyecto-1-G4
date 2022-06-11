@@ -81,6 +81,18 @@ def frecChars():
     for key,value in charsDic.items():
         print("%-10s : %-s" % (key,value))
 
+def mirrorASCII():
+    art = selectASCII()
+    result=list()
+    #iterar desde la longitud hasta cero
+    for y in range(len(art)):
+        linea=list()
+        for x in range(len(art[0])-1, -1,-1):
+            linea.append(art[y][x])
+        result.append(linea)
+    
+    printASCII(result)
+
 # 'def titulo' como que nos abre paso a los asciis
 def titulo():
     #Carga el logo del titulo desde el archivo tittle.txt

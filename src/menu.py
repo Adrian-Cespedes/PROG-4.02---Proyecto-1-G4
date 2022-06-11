@@ -17,7 +17,8 @@ def menuTexto():
     print("[3] Rotar 90 grados en sentido anti-horario")
     print("[4] Rotar 180 grados en sentido horario")
     print("[5] Rotar 180 grados en sentido anti-horario")
-    print("[6] Frecuencias de caracteres")
+    print("[6] Efecto espejo")
+    print("[7] Frecuencias de caracteres")
     print("[0] Salir del programa")
     print("="*100)
 
@@ -67,6 +68,10 @@ def menu():
                 rotate180Anti()
                 break
             elif opcion == 6:
+                clear()
+                mirrorASCII()
+                break
+            elif opcion == 7:
                 clear()
                 frecChars()
                 break
