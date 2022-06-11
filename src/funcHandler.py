@@ -1,3 +1,7 @@
+#
+# 
+# 
+
 from functions.selectASCII import selectASCII
 from functions.printASCII import printASCII
 
@@ -7,31 +11,51 @@ def showASCII():
 
 def rotate90():
     ascii = selectASCII()
-    for col in range(0, len(ascii[0])-1, 1):
-        for fil in range(len(ascii)-1, -1, -1):
-            print(ascii[fil][col], end='')
-        print('')
+    new_ascii = list()
+
+    for row in range(0, len(ascii[0])-1, 1):
+        newRow = []
+        for col in range(len(ascii)-1, -1, -1):
+            newRow.append(ascii[col][row])
+        new_ascii.append(newRow)
+
+    printASCII(new_ascii)
 
 def rotate90Anti():
     ascii = selectASCII()
-    for col in range(len(ascii[0])-1, -1, -1):
-        for fil in range(0, len(ascii)-1, 1):
-            print(ascii[fil][col], end='')
-        print('')
+    new_ascii = list()
+
+    for row in range(len(ascii[0])-1, -1, -1):
+        newRow = []
+        for col in range(0, len(ascii)-1, 1):
+            newRow.append(ascii[col][row])
+        new_ascii.append(newRow)
+
+    printASCII(new_ascii)
 
 def rotate180():                               #La funcion definida como rotate180 tiene como objetivo imprimir las filas desde la ultima hasta la primera, considerando las columnas iguales
     ascii = selectASCII()                      #A las que estaban en la imagen ASCII original
-    for f in range(len(ascii)-1,-1,-1):
-        for c in range(len(ascii[f])):
-            print(ascii[f][c],end="")
-        print()
+    new_ascii = list()
+
+    for row in range(len(ascii)-1,-1,-1):
+        newRow = []
+        for col in range(len(ascii[row])):
+            newRow.append(ascii[row][col])
+        new_ascii.append(newRow)
+
+    printASCII(new_ascii)
 
 def rotate180Anti():                               #La funcion definida como rotate180Anti tiene como objetivo imprimir las filas desde la ultima hasta la primera y desde la ultima columna
     ascii = selectASCII()                          #Hasta la primera
-    for f in range(len(ascii)-1,-1,-1):
-        for c in range(len(ascii[f])-1,-1,-1):
-            print(ascii[f][c],end="")
-        print()
+    new_ascii = list()
+
+    for row in range(len(ascii)-1,-1,-1):
+        newRow = []
+        for col in range(len(ascii[row])-1,-1,-1):
+            newRow.append(ascii[row][col])
+        new_ascii.append(newRow)
+
+    printASCII(new_ascii)
 
 def frecChars():
     # Selec ascii, tal como lo dice el nombre, solo selecciona el ascii para ser almacenado en la variable ascci
@@ -56,6 +80,18 @@ def frecChars():
     
     for key,value in charsDic.items():
         print("%-10s : %-s" % (key,value))
+
+def mirrorASCII():
+    art = selectASCII()
+    result=list()
+    #iterar desde la longitud hasta cero
+    for y in range(len(art)):
+        linea=list()
+        for x in range(len(art[0])-1, -1,-1):
+            linea.append(art[y][x])
+        result.append(linea)
+    
+    printASCII(result)
 
 # 'def titulo' como que nos abre paso a los asciis
 def titulo():

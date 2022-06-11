@@ -1,3 +1,7 @@
+#
+#
+#
+
 from os import listdir, system
 from functions.imports.loader import loadText
 from functions.randomScrap import randomScrap
@@ -15,6 +19,8 @@ def selectASCII():
         n = 0
         print()
         print("=" * 50)
+        # Porseaca lo apunto, pero creo que el remove lo que hace es que al imprimirse solo el primero, luego se impreso se elimina y el 
+        # segundo pasa a ser el primero
         for txt in artList:
             print(f"\n[{n}] [{txt[1:]}]")
             n += 1
