@@ -1,7 +1,3 @@
-#
-#
-#
-
 from os import listdir, system
 from functions.imports.loader import loadText
 from functions.randomScrap import randomScrap
@@ -31,7 +27,7 @@ def selectASCII():
             option = int(input("\nEscoge un ASCII Art:"))
         except ValueError:
             continue
-        if option < len(artList):
+        if option < len(artList):  
             path = "Assets/" + artList[option]
             print()
             return loadText(path)
