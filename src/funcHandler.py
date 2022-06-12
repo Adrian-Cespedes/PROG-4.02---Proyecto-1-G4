@@ -5,10 +5,22 @@
 from functions.selectASCII import selectASCII
 from functions.printASCII import printASCII
 
+"""
+showASCII llama a la funcion selectASCII, la cual retorna un ASCII Art
+en formato matriz.                                                          <-- TODAS LAS FUNCIONES HACEN ESTO
+Luego se llama a la funcion printASCII, la cual imprime el ASCII para
+su visualizacion.
+"""
 def showASCII():
     ascii = selectASCII()
     printASCII(ascii)
 
+
+"""
+Rota la matriz 90° horario conteniendo el ASCII Art siguiendo la siguiente logica:
+- Todo elemento del mismo indice de columna (izq. a der.), se convierte
+  en fila (descendente).
+"""
 def rotate90():
     ascii = selectASCII()
     new_ascii = list()
@@ -21,6 +33,11 @@ def rotate90():
 
     printASCII(new_ascii)
 
+
+"""
+Rota la matriz 90° anti-horario siguiendo la misma logica del horario,
+solo que se invierten los steps para obtener el resultado anti-horario.
+"""
 def rotate90Anti():
     ascii = selectASCII()
     new_ascii = list()
@@ -33,20 +50,14 @@ def rotate90Anti():
 
     printASCII(new_ascii)
 
-def rotate180():                               #La funcion definida como rotate180 tiene como objetivo imprimir las filas desde la ultima hasta la primera, considerando las columnas iguales
-    ascii = selectASCII()                      #A las que estaban en la imagen ASCII original
-    new_ascii = list()
 
-    for row in range(len(ascii)-1,-1,-1):
-        newRow = []
-        for col in range(len(ascii[row])):
-            newRow.append(ascii[row][col])
-        new_ascii.append(newRow)
-
-    printASCII(new_ascii)
-
-def rotate180Anti():                               #La funcion definida como rotate180Anti tiene como objetivo imprimir las filas desde la ultima hasta la primera y desde la ultima columna
-    ascii = selectASCII()                          #Hasta la primera
+"""
+Rota la matriz 180° horario conteniendo el ASCII Art siguiendo la siguiente logica:
+- Cada fila (ascendente) se vuelve su orden opuesto (ej: matriz[0] -> matriz[-1]),
+  pero sus elementos se invierten de orden.
+"""
+def rotate180():
+    ascii = selectASCII()
     new_ascii = list()
 
     for row in range(len(ascii)-1,-1,-1):
@@ -57,21 +68,35 @@ def rotate180Anti():                               #La funcion definida como rot
 
     printASCII(new_ascii)
 
-def frecChars():
-    # Selec ascii, tal como lo dice el nombre, solo selecciona el ascii para ser almacenado en la variable ascci
+
+"""
+Rotar 180° de forma horaria o anti-horaria resulta en la misma imagen.
+"""
+def rotate180Anti():
     ascii = selectASCII()
-    
-    # Se crea diccionario
+    new_ascii = list()
+
+    for row in range(len(ascii)-1,-1,-1):
+        newRow = []
+        for col in range(len(ascii[row])-1,-1,-1):
+            newRow.append(ascii[row][col])
+        new_ascii.append(newRow)
+
+    printASCII(new_ascii)
+
+
+"""
+Itera sobre los caracteres de la matriz y crea un diccionario para
+llevar la cuenta de cada uno.
+"""
+def frecChars():
+    ascii = selectASCII()
     charsDic  = {}
 
-    #Iteración sobre filas de matriz
     for row in ascii:
-        #Interación sobre columnas de filas
         for x in row:
-            #Si se encuentra marcado en el diccionario, sumar 1
             if x in charsDic:
                 charsDic[x] += 1
-            #De lo contrario inicializar con 1
             else:
                 charsDic[x] = 1
 
@@ -81,10 +106,15 @@ def frecChars():
     for key,value in charsDic.items():
         print("%-10s : %-s" % (key,value))
 
+
+"""
+Hace un efecto espejo al ASCII Art siguien la siguiente logica:
+- La matriz es la misma, pero los ordenes/indices de los elementos
+  de cada fila se invierten.
+"""
 def mirrorASCII():
     art = selectASCII()
     result=list()
-    #iterar desde la longitud hasta cero
     for y in range(len(art)):
         linea=list()
         for x in range(len(art[0])-1, -1,-1):
@@ -93,11 +123,8 @@ def mirrorASCII():
     
     printASCII(result)
 
-# 'def titulo' como que nos abre paso a los asciis
 def titulo():
-    #Carga el logo del titulo desde el archivo tittle.txt
     f = open("Assets/tittle.txt", 'r', encoding="utf8")
     print()
-    #Imprime el Titulo
     print(''.join([line for line in f]))
     print("{:^100s}".format("Grupo 4"))

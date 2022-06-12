@@ -5,11 +5,13 @@
 import os
 from funcHandler import *
 
-# Funcion para limpiar la consola
 def clear():
     os.system("cls")
 
-#Decoración principal
+
+"""
+Funcion que muestra visualmente las opciones disponibles
+"""
 def menuTexto():
     print("="*100)
     print("[1] Mostrar un ASCII ART")
@@ -22,27 +24,26 @@ def menuTexto():
     print("[0] Salir del programa")
     print("="*100)
 
+
+"""
+Funcion menu que recibe el input del usuario y llama a la funcion
+escogida por el usuario. Permite reiniciar o no el programa.
+"""
 def menu():
 
-# Flag nos sirve como un booleano
     flag = True
     trigger = True
     while flag:
-        # While anidado para controlar opciones no validas y reiniciar las opciones
         while True:
-            # Crea una pequeña presentación
             titulo()
-            # Esto crea lo que las instrucciones para el usuario
             menuTexto()
 
-            # Handling Exception si opcion no es int
             try:
                 opcion = int(input("\nIngrese su opcion: "))
             except ValueError:
                 clear()
                 continue
 
-            # Opciones disponibles
             if opcion == 0:
                 flag = False
                 trigger = False
@@ -84,12 +85,13 @@ def menu():
         print("[1] SI")
         print("[0] NO")
 
-        # While anidado para poder "reiniciar" y volver al while principal si se desea volver a usar
+        """
+        Logica para reiniciar el programa (volver a entrar al bucle) o
+        romper el bucle de reinicio y bucle de menu, finalizando el programa.       
+        """
         while trigger:
-            # Le pregunta al ususariosi desea volver a usa
             opcion = int(input("Desea volver a usar?: "))
             if opcion ==  0:
-                # Romper todo el while, cerrando el programa
                 flag = False
                 break
             elif opcion == 1:

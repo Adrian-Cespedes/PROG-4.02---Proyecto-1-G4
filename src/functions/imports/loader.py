@@ -2,6 +2,13 @@
 #
 #
 
+"""
+Toma un archivo .txt y lo convierte a una matriz 2D    
+
+(path): Direccion al ASCII / archivo .txt escogido
+return: Retorna la matriz 2D conteniendo el ASCII
+"""
+
 def loadText(path):
     file = open(path, "r", encoding='utf8')
     content = file.read()

@@ -2,6 +2,12 @@
 #
 #
 
+"""
+Imprime el ASCII contenido en la matriz para una mejor visualizacion
+
+(mat): El ASCII en matriz a ser impreso
+"""
+
 def printASCII(mat):
     row = len(mat)
     col   = len(mat[0])
