@@ -5,5 +5,3 @@
 3)COMENTAR CODIGO             (X)
 
 4)REHACER MENU                (X)
-
-5)RUTINA DE PRECARGA DE ASCII (_)
