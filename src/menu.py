@@ -4,10 +4,10 @@
 
 import os
 from funcHandler import *
+from funcHandler import ASCIIdir
 
 def clear():
     os.system("cls")
-
 
 """
 Funcion que muestra visualmente las opciones disponibles
@@ -21,6 +21,8 @@ def menuTexto():
     print("[5] Rotar 180 grados en sentido anti-horario")
     print("[6] Efecto espejo")
     print("[7] Frecuencias de caracteres")
+    print("[8] Cargar archivo y mostrarlo")
+    print("[9] Grabar en archivo")
     print("[0] Salir del programa")
     print("="*100)
 
@@ -76,21 +78,33 @@ def menu():
                 clear()
                 frecChars()
                 break
+            elif opcion == 8:
+                clear()
+                readTxt()
+                break
+            elif opcion == 9:
+                clear()
+                saveTxt()
+                break
             else:
                 print("Escoge una de las opciones...")
                 clear()
                 continue
-
-        print()
-        print("[1] SI")
-        print("[0] NO")
 
         """
         Logica para reiniciar el programa (volver a entrar al bucle) o
         romper el bucle de reinicio y bucle de menu, finalizando el programa.       
         """
         while trigger:
-            opcion = int(input("Desea volver a usar?: "))
+            print("\n¿Volver a usar?")
+            print("[1] SI")
+            print("[0] NO")
+            try:
+                opcion = int(input("\nIngrese su opcion: "))
+            except ValueError:
+                clear()
+                print("Seleccione una opcion valida.")
+                continue
             if opcion ==  0:
                 flag = False
                 break
@@ -98,6 +112,7 @@ def menu():
                 clear()
                 break
             else:
+                clear()
                 print("Seleccione una selección valida")
     
     print("\nGracias por usar este programa.")
